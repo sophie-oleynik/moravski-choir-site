@@ -1,0 +1,25 @@
+.support-block {
+    @extend .block-wrapper;
+    display: flex;
+    gap: 24px;
+    color: #ffffff;
+    justify-content: space-between;
+    background-image: url("/assets/support-illustration.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        .btn {
+            width: 352px;
+        }
+    }
+
+    // .illustration {
+    //     height: 424px;
+    //     object-fit: cover;
+    // }
+}

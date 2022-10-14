@@ -1,0 +1,95 @@
+.achievements-block {
+    @extend .block-wrapper;
+    background: #fff;
+    color: #111219;
+
+    .title {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    &-content {
+        display: flex;
+        gap: 128px;
+    }
+
+    .timeline {
+        min-height: 500px;
+        position: relative;
+        height: 100%;
+        min-width: 8px;
+        border-radius: 8px;
+        background-color: rgba(17, 18, 25, 0.15);
+        padding: 16px 0;
+        box-shadow: 0 0 8px 0px rgba(17, 18, 25, 0.2);
+
+        &-value {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 0;
+            width: 100%;
+            background: #338af3;
+            border-radius: 8px;
+            transition: height 0.3s;
+        }
+        &__year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(-150%, -50%);
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        .event {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            transition: all 0.3s;
+            cursor: pointer;
+            z-index: 5;
+            box-shadow: 0 0 2px 0 rgba(17, 18, 25, 0.8);
+
+            &.before-active {
+                background: #ffffff;
+            }
+            &:hover, &.active{
+                width: 24px;
+                height: 24px;
+                box-shadow: 0 0 8px 0px rgba(17, 18, 25, 0.8);
+                .event-label {
+                    transform: translate(25%, -50%);
+                    opacity: 0.5;
+                }
+            }
+            &-label {
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                transform: translate(0, -50%);
+                opacity: 0;
+                font-size: 14px;
+                transition: all 0.3s;
+            }
+        }
+
+    }
+    .timeline-content {
+        p {
+            @extend .text;
+            margin-bottom: 16px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            max-width: 600px;
+        }
+    }
+}

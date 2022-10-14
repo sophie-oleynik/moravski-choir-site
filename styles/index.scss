@@ -1,0 +1,90 @@
+// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Cormorant Garamond', serif;
+
+$breakpoint-lg: 1500px;
+$breakpoint-md: 1200px;
+$breakpoint-sm: 800px;
+
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #111219;
+    font-family: $font-primary;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
+
+.block-wrapper {
+    padding: 120px 80px;
+
+    @media (max-width: $breakpoint-lg) {
+        padding: 100px 80px;
+    }
+}
+
+.title, h3.title {
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 116px;
+    font-family: $font-secondary;
+}
+.subtitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 170%;
+    @media (max-width: $breakpoint-lg) {
+        font-size: 18px;
+    }
+}
+.text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+}
+
+button, a.btn {
+    background: none;
+    border: none;
+    outline: none;
+    height: 56px;
+    padding: 0 16px;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: $font-primary;
+    text-decoration: none;
+
+    &.btn-primary, a.btn-primary {
+        background: #FF424D;
+        color: #fff;
+    }
+
+    &.btn-secondary {
+
+    }
+}
+
+@import './blocks/navigation.scss';
+@import './blocks/main.scss';
+@import './blocks/about.scss';
+@import './blocks/achievments';
+@import './blocks/support';
+@import './blocks/contact';
+// @import './blocks/main-video.scss';

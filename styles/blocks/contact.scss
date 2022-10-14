@@ -1,0 +1,44 @@
+.contact-block {
+    @extend .block-wrapper;
+    display: flex;
+    gap: 192px;
+
+    .title {
+        color: #fff
+    }
+
+    &-links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &-link {
+            @extend .subtitle;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            span {
+                color: rgba(255, 255, 255, 0.6);
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+
+    &-socials {
+        display: flex;
+        gap: 16px;
+        svg {
+            height: 32px;
+            path {
+                transition: all 0.3s;
+            }
+
+            &:hover path {
+                fill: #fff;
+            }
+        }
+    }
+}
