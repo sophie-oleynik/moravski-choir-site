@@ -1,0 +1,22 @@
+.about-conductor-block {
+    @extend .block-wrapper;
+    display: flex;
+    gap: 3rem;
+
+    @media (max-width: $breakpoint-md) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    &__img {
+        width: 25rem;
+        object-fit: cover;
+        box-shadow: rgba(87, 87, 89, 0.33) 0px 7px 29px 0px;
+    }
+
+    &__text {
+        @extend .text;
+        color: #fff;
+        margin-top: 2rem;
+    }
+}

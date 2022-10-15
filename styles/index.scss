@@ -5,9 +5,9 @@
 $font-primary: 'Inter', sans-serif;
 $font-secondary: 'Cormorant Garamond', serif;
 
-$breakpoint-lg: 1500px;
-$breakpoint-md: 1200px;
-$breakpoint-sm: 800px;
+$breakpoint-lg: 1300px;
+$breakpoint-md: 1000px;
+$breakpoint-sm: 750px;
 
 body {
     width: 100%;
@@ -29,9 +29,14 @@ img {
 
 .block-wrapper {
     padding: 120px 80px;
+    max-width:100%;
+    overflow: hidden;
 
     @media (max-width: $breakpoint-lg) {
-        padding: 100px 80px;
+        padding: 100px 64px;
+    }
+    @media (max-width: $breakpoint-md) {
+        padding: 64px 32px;
     }
 }
 
@@ -40,6 +45,11 @@ img {
     font-size: 96px;
     line-height: 116px;
     font-family: $font-secondary;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: 72px;
+        line-height: 120%;
+    }
 }
 .subtitle {
     font-weight: 400;
@@ -70,15 +80,25 @@ button, a.btn {
     line-height: 24px;
     font-family: $font-primary;
     text-decoration: none;
+    cursor: pointer;
 
     &.btn-primary, a.btn-primary {
         background: #FF424D;
         color: #fff;
+        transition: all 0.3s;
+
+        &:hover {
+            background: #f92a34;
+        }
+        &:active {
+            background: #f92a34;
+            transform: scale(1.05);
+        }
     }
 
-    &.btn-secondary {
+    // &.btn-secondary {
 
-    }
+    // }
 }
 
 @import './blocks/navigation.scss';
@@ -87,4 +107,4 @@ button, a.btn {
 @import './blocks/achievments';
 @import './blocks/support';
 @import './blocks/contact';
-// @import './blocks/main-video.scss';
+@import './blocks/about-conductor.scss';

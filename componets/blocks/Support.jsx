@@ -1,8 +1,11 @@
+import { useText } from '../../locales'
+
 const Support = () => {
+  const t = useText()
   return (
-    <div className="support-block">
+    <div className="support-block" id="support">
       <div className="support-block-content">
-        <h3 className="title">Support</h3>
+        <h3 className="title">{t('support')}</h3>
 
         <button className="btn btn-primary">
           <PatreonSvg /> Patreon

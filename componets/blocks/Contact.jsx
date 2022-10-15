@@ -1,3 +1,4 @@
+import { useText } from '../../locales'
 import {
   YOUTUBE_URL,
   WIKI_URL,
@@ -8,22 +9,27 @@ import {
 } from '../../constants'
 
 const Contact = () => {
+  const t = useText()
   return (
-    <div className="contact-block">
-      <h3 className="title">Contact</h3>
+    <div className="contact-block" id="contact">
+      <h3 className="title">{t('contact')}</h3>
 
       <div className="contact-block-links">
         <div className="contact-block-links-link">
           <span>Instagram</span>
-          <a href={INSTAGRAM_URL}>@choir_moravski</a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            @choir_moravski
+          </a>
         </div>
         <div className="contact-block-links-link">
           <span>Email</span>
-          <a href={'mailto:' + EMAIL}>choirmoravski@gmail.com</a>
+          <a href={'mailto:' + EMAIL}>moravski.choir@gmail.com</a>
         </div>
         <div className="contact-block-links-link">
           <span>Facebook</span>
-          <a href={FACEBOOK_URL}>choirmoravski</a>
+          <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+            MoravskiChoir
+          </a>
         </div>
       </div>
       <div className="contact-block-socials">
@@ -80,7 +86,7 @@ const PatreonSvg = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_301_342)">
+    <g clipPath="url(#clip0_301_342)">
       <path
         d="M5.84758 0V31.9158H0V0H5.84758ZM21.2025 0C27.8098 0 33.166 5.35618 33.166 11.9635C33.166 18.5708 27.8098 23.9269 21.2025 23.9269C14.5952 23.9269 9.23906 18.5706 9.23906 11.9635C9.23906 5.35618 14.5954 0 21.2025 0Z"
         fill="#7E8590"

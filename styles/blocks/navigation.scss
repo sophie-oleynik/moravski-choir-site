@@ -4,27 +4,58 @@
     display: flex;
     align-items: center;
     background-color: #111219;
-    padding: 0 60px 0 60px;
+    padding: 0 60px;
+
+    @media (max-width: $breakpoint-md) {
+        padding: 0 32px;
+    }
 }
 
 .nav-title {
     display: flex;
-    font-family: 'Cormorant SC', serif;
+    font-family: $font-secondary;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 1.5rem;
     color: #FFFFFF;
+    align-items: center;
+    gap: 1rem;
+
+    &__logo {
+        width: 5rem;
+        height: 3rem;
+    }
 }
 
 .nav-buttons {
     display: flex;
     align-items: center;
     margin-left: auto;
+    gap: 32px;
 
-    &__about, &__achievements, &__concerts, &__news, &__contact {
+    @media (max-width: $breakpoint-md) {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #111219;
+        left: 0;
+        opacity: 0;
+        top: -100%;
+        z-index: 50;
+        transition: all 0.3s;
+        flex-direction: column;
+        padding: 64px;
+
+        &.active {
+            opacity: 1;
+            top: 90px;
+        }
+    }
+
+    &__about, &__achievements, &__support {
         font-weight: 400;
         font-size: 16px;
-        margin-right: 32px;
         color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
         cursor: pointer;
 
         &:active {     
@@ -33,13 +64,17 @@
     }
 
     &__language {
-        margin-left: 32px;
-        margin-right: 32px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 0;
+        cursor: pointer;
     }
 
-    &__language > svg {
-        border: 1px solid transparent;
-        border-radius: 1rem;
+    &__language > img {
+        height: 100%;
+        object-fit: cover;
     }
 
     &__cooperation {
@@ -48,7 +83,48 @@
         border: none;
         border-radius: 0;
         background-color: #FFFFFF;
+        color: #111219;
         padding: 16px 26px;
+        text-decoration: none;
     }
 }
 
+.menu-btn {
+    display: none;
+    width: 32px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+    padding: 0;
+    transition: all 0.3s;
+    position: relative;
+
+    span {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: #fff;
+        transition: all 0.3s;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: $breakpoint-md) {
+        display: flex;
+    }
+
+    &.active {
+        span:nth-child(1) {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        span:nth-child(2) {
+            opacity: 0;
+        }
+        span:nth-child(3) {
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+    }
+}

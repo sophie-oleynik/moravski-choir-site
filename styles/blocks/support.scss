@@ -9,12 +9,23 @@
     background-position: center;
     background-attachment: fixed;
 
+    @media (max-width: $breakpoint-md) {
+        justify-content: center;
+        text-align: center;
+    }
+
     &-content {
         display: flex;
         flex-direction: column;
         gap: 72px;
         .btn {
             width: 352px;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            .btn {
+                width: 100%;
+            }
         }
     }
 

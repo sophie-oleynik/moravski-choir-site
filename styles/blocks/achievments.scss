@@ -5,16 +5,20 @@
 
     .title {
         text-align: center;
-        margin-bottom: 64px;
+        margin-bottom: 2rem;
     }
 
     &-content {
         display: flex;
         gap: 128px;
+
+        @media (max-width: $breakpoint-md) {
+            gap: 64px;
+        }
     }
 
     .timeline {
-        min-height: 500px;
+        min-height: 650px;
         position: relative;
         height: 100%;
         min-width: 8px;
@@ -22,6 +26,10 @@
         background-color: rgba(17, 18, 25, 0.15);
         padding: 16px 0;
         box-shadow: 0 0 8px 0px rgba(17, 18, 25, 0.2);
+
+        @media (max-width: $breakpoint-md) {
+            margin-left: 16px;
+        }
 
         &-value {
             position: absolute;
@@ -83,13 +91,14 @@
     .timeline-content {
         p {
             @extend .text;
-            margin-bottom: 16px;
+            margin-bottom: 2rem;
         }
 
         img {
             display: block;
             margin: auto;
-            max-width: 600px;
+            width: 700px;
+            box-shadow: rgba(79, 79, 80, 0.44) 0px 7px 29px 0px;
         }
     }
 }
