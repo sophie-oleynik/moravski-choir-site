@@ -8,6 +8,9 @@
         margin-bottom: 32px;
 
         @media (max-width: $breakpoint-sm) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 64px;
         }
     }
