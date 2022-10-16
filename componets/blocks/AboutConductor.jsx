@@ -5,11 +5,18 @@ const AboutConductor = () => {
   const t = useText()
   return (
     <div className="about-conductor-block">
-      <div
-        className="about-conductor-block__text"
-        data-aos="fade-up-right"
-        dangerouslySetInnerHTML={{ __html: t('aboutOlena') }}
-      ></div>
+      <div className="about-conductor-block-content">
+        <div
+          className="about-conductor-block-content__text"
+          data-aos="fade-up-right"
+          dangerouslySetInnerHTML={{ __html: t('aboutOlena') }}
+        ></div>
+        <div
+          className="about-conductor-block-content__quote"
+          data-aos="fade-up-right"
+          dangerouslySetInnerHTML={{ __html: t('quote') }}
+        ></div>
+      </div>
       <img
         src="/assets/OlenaRadko1.jpg"
         alt="OlenaRadko"
