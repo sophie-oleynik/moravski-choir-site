@@ -6,6 +6,12 @@
     .title {
         text-align: center;
         margin-bottom: 2rem;
+
+        @media (max-width: $breakpoint-sm) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &-content {

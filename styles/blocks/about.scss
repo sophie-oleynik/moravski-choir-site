@@ -20,6 +20,12 @@
         .title {
             color: #fff;
             margin-bottom: 72px;
+
+            @media (max-width: $breakpoint-sm) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
         .members-list {
@@ -82,6 +88,12 @@
                 margin: 64px auto 0;
                 display: flex;
                 width: 350px;
+            }
+
+            @media (max-width: $breakpoint-sm) {
+                width: 250px;
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
         }
     }

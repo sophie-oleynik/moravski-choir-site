@@ -9,6 +9,12 @@
     background-position: center;
     background-attachment: fixed;
 
+    @supports (-webkit-touch-callout: none) {
+        background: url("/assets/support-illustration.jpg") center top no-repeat scroll;
+        background-size: cover;
+        background-position: center;
+    }  
+
     @media (max-width: $breakpoint-md) {
         justify-content: center;
         text-align: center;
@@ -28,9 +34,4 @@
             }
         }
     }
-
-    // .illustration {
-    //     height: 424px;
-    //     object-fit: cover;
-    // }
 }

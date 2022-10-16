@@ -1,4 +1,5 @@
 import { useText } from '../../locales'
+import { PATREON_URL } from '../../constants'
 
 const Support = () => {
   const t = useText()
@@ -7,16 +8,15 @@ const Support = () => {
       <div className="support-block-content">
         <h3 className="title">{t('support')}</h3>
 
-        <button className="btn btn-primary">
+        <a
+          href={PATREON_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
           <PatreonSvg /> Patreon
-        </button>
+        </a>
       </div>
-
-      {/* <img
-        src="/assets/support-illustration.png"
-        alt="Support Us"
-        className="illustration"
-      /> */}
     </div>
   )
 }
