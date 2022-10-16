@@ -16,8 +16,16 @@ const Navigation = () => {
   }, [show])
   return (
     <div className="nav">
-      <div className="nav-title">{t('choir')}</div>
-      <div className={`nav-buttons ${show ? 'active' : ''}`} onClick={() => setShow(false)}>
+      <div className="nav-title">
+        <img
+          src={lang === 'ua' ? '/assets/LogoUA.png' : '/assets/LogoGB.png'}
+          alt={lang === 'ua' ? 'LogoUA' : 'LogoGB'}
+        />
+      </div>
+      <div
+        className={`nav-buttons ${show ? 'active' : ''}`}
+        onClick={() => setShow(false)}
+      >
         <a href="#about" className="nav-buttons__about">
           {t('about')}
         </a>

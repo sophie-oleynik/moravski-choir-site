@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from 'react'
+import { useText } from '../../locales'
 import { YOUTUBE_URL } from '../../constants'
 
 const Main = () => {
+  const t = useText()
   const [muted, setMuted] = useState(true)
   const toggleSound = () => setMuted(!muted)
   return (
-    <div className="main-block">
+    <div className={`main-block ${muted ? 'muted' : 'unmuted'}`}>
       <video
         src="/main.mp4"
         alt="video"
@@ -16,6 +18,9 @@ const Main = () => {
         loop
         volume={0}
       />
+      <h3 className="title" data-aos="fade-down">
+        {t('choir')}
+      </h3>
 
       <img
         className="sound-toggle"
