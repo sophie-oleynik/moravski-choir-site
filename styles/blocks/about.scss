@@ -91,9 +91,9 @@
             }
 
             @media (max-width: $breakpoint-sm) {
-                width: 300px;
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
+                width: 100%;
+                font-size: 16px;
+                margin-bottom: 32px;
             }
         }
     }
@@ -121,6 +121,10 @@
             @media (max-width: $breakpoint-lg) {
                 min-width: 300px;
                 max-width: 500px;
+            }
+            @media (max-width: $breakpoint-sm) {
+                min-width: unset;
+                max-width: unset;
             }
         }
         @media (max-width: $breakpoint-lg) {

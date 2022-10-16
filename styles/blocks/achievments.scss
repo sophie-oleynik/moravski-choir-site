@@ -5,13 +5,10 @@
 
     .title {
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 32px;
 
         @media (max-width: $breakpoint-sm) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 4rem;
+            margin-bottom: 64px;
         }
     }
 

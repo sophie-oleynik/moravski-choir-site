@@ -36,10 +36,4 @@
             }
         }
     }
-
-    @media (max-width: $breakpoint-sm) {
-        &-content>h3 {
-            font-size: 4rem;
-        }
-    }
 }

@@ -9,6 +9,9 @@
     @media (max-width: $breakpoint-md) {
         padding: 0 32px;
     }
+    @media (max-width: $breakpoint-sm) {
+        padding: 0 16px;
+    }
 }
 
 .nav-title {
