@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>Moravski Chamber Choir</title>
+        <link rel="shortcut icon" href="/assets/favicon.ico" />
       </Head>
       <Navigation />
       <MainBlock />
