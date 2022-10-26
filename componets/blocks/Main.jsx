@@ -16,6 +16,7 @@ const Main = () => {
         autoPlay
         muted={muted}
         loop
+        playsinline
         volume={0}
       />
       <h3 className="title" data-aos="fade-down">
