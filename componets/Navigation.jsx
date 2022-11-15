@@ -14,6 +14,8 @@ const Navigation = () => {
       document.body.style.overflow = 'auto'
     }
   }, [show])
+
+  const changeLanguage = () => setLang(lang !== 'ua' ? 'ua' : 'en')
   return (
     <div className="nav">
       <div className="nav-title">
@@ -35,15 +37,8 @@ const Navigation = () => {
         <a href="#support" className="nav-buttons__support">
           {t('support')}
         </a>
-        <button
-          className="nav-buttons__language"
-          onClick={() => setLang(lang !== 'ua' ? 'ua' : 'en')}
-        >
-          <img
-            src={lang === 'ua' ? '/assets/UA.svg' : '/assets/GB.svg'}
-            alt={lang === 'ua' ? 'UA' : 'GB'}
-          />
-        </button>
+
+        <LanguageButton lang={lang} onChange={changeLanguage} />
         <a
           href="https://send.monobank.ua/jar/8WEmCt9AyE"
           className="nav-buttons__cooperation"
@@ -54,6 +49,7 @@ const Navigation = () => {
         </a>
       </div>
 
+      <LanguageButton isMobile={true} lang={lang} onChange={changeLanguage} />
       <MenuButton active={show} onClick={() => setShow(!show)} />
     </div>
   )
@@ -66,5 +62,17 @@ const MenuButton = ({ active, onClick }) => (
     <span />
     <span />
     <span />
+  </button>
+)
+
+const LanguageButton = ({ lang, onChange, isMobile }) => (
+  <button
+    className={`nav-buttons__language ${isMobile ? 'mobile' : ''}`}
+    onClick={onChange}
+  >
+    <img
+      src={lang === 'ua' ? '/assets/UA.svg' : '/assets/GB.svg'}
+      alt={lang === 'ua' ? 'UA' : 'GB'}
+    />
   </button>
 )
