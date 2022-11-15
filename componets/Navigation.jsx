@@ -1,19 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import { useLang, useText } from '../locales'
 import { useState, useEffect } from 'react'
+import { useNoBodyScroll } from '../utils/hooks'
 
 const Navigation = () => {
   const { lang, setLang } = useLang()
   const t = useText()
   const [show, setShow] = useState(false)
-  useEffect(() => {
-    if (!process.browser) return
-    document.body.style.overflow = show ? 'hidden' : 'auto'
+  useNoBodyScroll(show)
+  // useEffect(() => {
+  //   if (!process.browser) return
+  //   document.body.style.overflow = show ? 'hidden' : 'auto'
 
-    return () => {
-      document.body.style.overflow = 'auto'
-    }
-  }, [show])
+  //   return () => {
+  //     document.body.style.overflow = 'auto'
+  //   }
+  // }, [show])
 
   const changeLanguage = () => setLang(lang !== 'ua' ? 'ua' : 'en')
   return (

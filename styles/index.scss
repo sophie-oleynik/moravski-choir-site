@@ -10,98 +10,115 @@ $breakpoint-md: 1000px;
 $breakpoint-sm: 750px;
 
 body {
-    width: 100%;
-    margin: 0;
-    background-color: #111219;
-    font-family: $font-primary;
+  width: 100%;
+  margin: 0;
+  background-color: #111219;
+  font-family: $font-primary;
+
+  &.hidden {
+    max-height: 100vh;
+    overflow-y: scroll;
+    #__next {
+      max-height: 100vh;
+      overflow: hidden;
+    }
+  }
 }
-h1,h2,h3,h4,h5,h6 {
-    margin: 0;
-    font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .block-wrapper {
-    padding: 120px 80px;
-    max-width: 100%;
-    min-width: 300px;
-    overflow: hidden;
+  padding: 120px 80px;
+  max-width: 100%;
+  min-width: 300px;
+  overflow: hidden;
 
-    @media (max-width: $breakpoint-lg) {
-        padding: 100px 64px;
-    }
-    @media (max-width: $breakpoint-md) {
-        padding: 64px 32px;
-    }
+  @media (max-width: $breakpoint-lg) {
+    padding: 100px 64px;
+  }
+  @media (max-width: $breakpoint-md) {
+    padding: 64px 32px;
+  }
 }
 
-.title, h3.title {
-    font-weight: 700;
-    font-size: 96px;
-    line-height: 116px;
-    font-family: $font-secondary;
+.title,
+h3.title {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 116px;
+  font-family: $font-secondary;
 
-    @media (max-width: $breakpoint-md) {
-        font-size: 72px;
-        line-height: 120%;
-    }
-    @media (max-width: $breakpoint-sm) {
-        font-size: 48px;
-    }
+  @media (max-width: $breakpoint-md) {
+    font-size: 72px;
+    line-height: 120%;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 48px;
+  }
 }
 .subtitle {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 170%;
-    @media (max-width: $breakpoint-lg) {
-        font-size: 18px;
-    }
-    @media (max-width: $breakpoint-sm) {
-        font-size: 16px;
-    }
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 170%;
+  @media (max-width: $breakpoint-lg) {
+    font-size: 18px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 16px;
+  }
 }
 .text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 170%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
 }
 
-button, a.btn {
-    background: none;
-    border: none;
-    outline: none;
-    height: 56px;
-    padding: 0 16px;
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    font-family: $font-primary;
-    text-decoration: none;
-    cursor: pointer;
+button,
+a.btn {
+  background: none;
+  border: none;
+  outline: none;
+  height: 56px;
+  padding: 0 16px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: $font-primary;
+  text-decoration: none;
+  cursor: pointer;
 
-    &.btn-primary, a.btn-primary {
-        background: #FF424D;
-        color: #fff;
-        transition: all 0.3s;
+  &.btn-primary,
+  a.btn-primary {
+    background: #ff424d;
+    color: #fff;
+    transition: all 0.3s;
 
-        &:hover {
-            background: #f92a34;
-        }
-        &:active {
-            background: #f92a34;
-            transform: scale(1.05);
-        }
+    &:hover {
+      background: #f92a34;
     }
+    &:active {
+      background: #f92a34;
+      transform: scale(1.05);
+    }
+  }
 }
 
 @import './blocks/navigation.scss';

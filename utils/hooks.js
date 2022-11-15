@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function useMediaQuery(query)  {
+export function useMediaQuery(query) {
   const getMatches = (query) => {
     // Prevents SSR issues
     if (typeof window !== 'undefined') {
@@ -41,4 +41,12 @@ function useMediaQuery(query)  {
   return matches
 }
 
-export default useMediaQuery
+export const useNoBodyScroll = (block) =>
+  useEffect(() => {
+    if (!process.browser) return
+    if (block) document.body.classList.add('hidden')
+    else document.body.classList.remove('hidden')
+    return () => {
+      document.body.classList.remove('hidden')
+    }
+  }, [block])

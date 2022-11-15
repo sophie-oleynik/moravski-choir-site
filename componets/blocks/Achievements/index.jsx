@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, Fragment } from 'react'
 import { useLang, useText } from '../../../locales'
-import useMediaQuery from '../../../utils/hooks'
+import { useMediaQuery } from '../../../utils/hooks'
 import Timeline, { formatDate } from './Timeline'
 
 const AchievementsBlock = () => {
