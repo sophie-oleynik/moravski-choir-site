@@ -18,7 +18,7 @@ const AboutConductor = () => {
         ></div>
       </div>
       <img
-        src="/assets/OlenaRadko1.jpg"
+        src="/assets/OlenaRadko1.png"
         alt="OlenaRadko"
         className="about-conductor-block__img"
         data-aos="fade-up-left"
