@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { MEMBERS } from '../../constants'
 import { useLang, useText } from '../../locales'
-import Image from 'next/image'
 
 const AboutBlock = () => {
   const t = useText()
@@ -15,13 +14,11 @@ const AboutBlock = () => {
         <div className="members-list">
           {MEMBERS.map((member, i) => (
             <div className="member" data-aos="fade-right" key={i}>
-              <div className="member__img">
-                <Image
-                  layout="fill"
-                  src={member.avatar}
-                  alt={member.name[lang]}
-                />
-              </div>
+              <img
+                className="member__img"
+                src={member.avatar}
+                alt={member.name[lang]}
+              />
               <div className="member-content">
                 <div className="member__name">{member.name[lang]}</div>
                 <div className="member__position">{member.position[lang]}</div>
