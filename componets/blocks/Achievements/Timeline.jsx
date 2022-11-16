@@ -15,12 +15,6 @@ const Timeline = ({ onEventChange, isHorizontal }) => {
     setState(initializeTimelimeDates(EVENTS))
   }, [])
 
-  // const content = document.querySelector('.timeline-content')
-  // let contentHeight = content.style.height
-  // setState({ ...state, height: contentHeight })
-  // const timeline = document.querySelector('.timeline')
-  // timeline.style.height = state.height
-
   const handleClick = (index) => {
     if (index === state.active) {
       onEventChange(null)
@@ -32,6 +26,7 @@ const Timeline = ({ onEventChange, isHorizontal }) => {
   }
   const directionPositionKey = isHorizontal ? 'left' : 'top'
   const directionValueKey = isHorizontal ? 'width' : 'height'
+
   return (
     <div className={`timeline ${isHorizontal ? 'horizontal' : 'vertical'}`}>
       {state.list.map((event, i) => (
@@ -144,3 +139,14 @@ const initializeTimelimeDates = (data) => {
     max_date,
   }
 }
+
+const ArrowIcon = ({ iconClassName, text, isActive }) => (
+  <div
+    className={`arrow-icon ${iconClassName || ''} ${isActive ? 'active' : ''}`}
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792">
+      <path d="M0,896l235.9-388.4H1792L1553.7,896l238.3,388.4H235.5L0,896z" />
+    </svg>
+    <div className="arrow-icon-text">{text}</div>
+  </div>
+)

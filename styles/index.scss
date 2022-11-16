@@ -5,6 +5,7 @@
 $font-primary: 'Inter', sans-serif;
 $font-secondary: 'Cormorant Garamond', serif;
 
+$breakpoint-xl: 1620px;
 $breakpoint-lg: 1300px;
 $breakpoint-md: 1000px;
 $breakpoint-sm: 750px;
@@ -48,8 +49,11 @@ img {
   min-width: 300px;
   overflow: hidden;
 
+  @media (max-width: $breakpoint-xl) {
+    padding: 64px 80px;
+  }
   @media (max-width: $breakpoint-lg) {
-    padding: 100px 64px;
+    padding: 64px;
   }
   @media (max-width: $breakpoint-md) {
     padding: 64px 32px;
